@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>이벤트</h1>
+	
+	<h2>h2태그_1</h2>
+	<h2>h2태그_2</h2>
+	<h2>h2태그_3</h2>
+	
+	<h3 class="tagh3">h3태그_1</h3>
+	<h3 class="tagh3">h3태그_2</h3>
+	<h3 class="tagh3">네이버</h3>
+	<h3 class="tagh3">다음</h3>
+	
+	<!-- ~할때 -->
+	<!-- 마우스 클릭할 때 ~~실행 되어라 -->
+	<!-- 키보드를 입력할 때 ~~실행 되어라 -->
+	<!-- 마우스 드래그할 때 ~~실행 되어라 -->
+	<div>
+		<button id="btn">자바스크립트 테스트 버튼</button>
+	</div>
+	<p id = "display">
+		
+	</p>
+	
+	<p id = "display2">
+		
+	</p>
+	
+	<script type="text/javascript">
+		//문서가 로딩 되었을 때 선언됨
+		window.onload = function(){
+			//기능 정의
+			
+			//id
+			var testButton = document.getElementById("btn");
+			var testArea = document.getElementById("display");
+			var h3Area = document.getElementById("display2");
+			console.log(testButton);
+			console.log(testArea);
+			console.log(h3Area);
+			
+			//tag : 태그 h2 - 여러개이므로 배열로 저장
+			var tagArray = document.getElementsByTagName("h2");
+			console.log(tagArray);
+			
+			//class : 태그 h3
+			var tagh3Array = document.getElementsByClassName("tagh3");
+			console.log(tagh3Array);
+			
+			
+			//기능은 정의되고 클릭이 되면 작동한다.
+			testButton.onclick = function(){
+				console.log("버튼 클릭");
+				testArea.innerHTML = "<font color='#ff0000'>홍길동</font>";
+			};
+			
+			tagArray[0].onclick = function(){
+				console.log("h2태그_1");
+				testArea.innerHTML = "<font color='#00ff00'>h2태그_1</font>";
+			};
+			
+			tagArray[1].onclick = function(){
+				console.log("h2태그_2");
+				testArea.innerHTML = "<font color='#0000ff'>h2태그_2</font>";
+			};
+			
+			tagArray[2].onclick = function(){
+				console.log("h2태그_3");
+				testArea.innerHTML = "<font color='#ff00ff'>h2태그_3</font>";
+			};
+			
+			tagh3Array[0].onclick = function(){
+				console.log("h3태그_1");
+				h3Area.innerHTML = "<font color='#ffff00'>h3태그_1</font>";
+			};
+			
+			tagh3Array[1].onclick = function(){
+				console.log("h3태그_2");
+				h3Area.innerHTML = "<font color='#00ffff'>h3태그_1</font>";
+			};
+			
+			tagh3Array[2].onclick = function(){
+				console.log("네이버");
+				h3Area.innerHTML = "<a href='http://www.naver.com' target='_blank'>네이버</a>";
+			};
+			
+			tagh3Array[3].onclick = function(){
+				console.log("다음");
+				h3Area.innerHTML = "<a href='http://www.daum.net' target='_blank'>다음</a>";
+			};
+		};
+	</script>
+	
+</body>
+</html>
